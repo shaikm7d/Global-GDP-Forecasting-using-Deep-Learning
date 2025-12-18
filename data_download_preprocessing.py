@@ -1,3 +1,4 @@
+# Import necessary libraires
 import wbdata
 import pandas as pd
 import numpy as np
@@ -82,7 +83,10 @@ expression = (
     'Europe \\& Central Asia \\(excluding high income\\)|Europe \\& Central Asia|Euro area|'
     'East Asia \\& Pacific \\(IDA \\& IBRD countries\\)|East Asia \\& Pacific \\(excluding high income\\)|'
     'East Asia \\& Pacific|Early\\-demographic dividend|Central Europe and the Baltics|Caribbean small states|'
-    'Arab World|Africa Western and Central|Africa Eastern and Southern)$).*'
+    'Arab World|Africa Western and Central|Africa Eastern and Southern|'
+    'Middle East, North Africa, Afghanistan \\& Pakistan \\(excluding high income\\)|'
+    'Middle East, North Africa, Afghanistan \\& Pakistan \\(IDA \\& IBRD\\)|'
+    'Middle East, North Africa, Afghanistan \\& Pakistan|'
 )
 
 # Retrieve country information from the World Bank API using the regex filter
@@ -108,8 +112,20 @@ world_bank_data = world_bank_data.sort_values(by=['country', 'year']).reset_inde
 # Convert object dtype columns to proper types
 world_bank_data = world_bank_data.infer_objects()
 
-# Identify numeric columns (excluding "country")
-numeric_cols = world_bank_data.select_dtypes(include=[np.number]).columns
+# Identify numeric columns
+#numeric_cols = world_bank_data.select_dtypes(include=[np.number]).columns.drop("year", errors="ignore")
+numeric_cols = [
+    "GDPpc_2017$",
+    "Population_total",
+    "Life_expectancy",
+    "Literacy_rate",
+    "Unemploymlent_rate",
+    "Fertility_rate",
+    "Poverty_ratio",
+    "Primary_school_enrolmet_rate",
+    "Energy_use",
+    "Exports_2017$",
+]
 
 # Fill missing values with interpolation and forward-backward fill (only for numeric columns)
 world_bank_data_temp = world_bank_data.groupby("country")[numeric_cols].apply(lambda group: group.interpolate(method="linear"))
