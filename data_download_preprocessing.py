@@ -86,7 +86,8 @@ expression = (
     'Arab World|Africa Western and Central|Africa Eastern and Southern|'
     'Middle East, North Africa, Afghanistan \\& Pakistan \\(excluding high income\\)|'
     'Middle East, North Africa, Afghanistan \\& Pakistan \\(IDA \\& IBRD\\)|'
-    'Middle East, North Africa, Afghanistan \\& Pakistan|'
+    'Middle East, North Africa, Afghanistan \\& Pakistan'
+    ')$).*$'
 )
 
 # Retrieve country information from the World Bank API using the regex filter
