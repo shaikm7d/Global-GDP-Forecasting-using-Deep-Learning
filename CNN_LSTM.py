@@ -3,7 +3,7 @@
 import torch
 import torch.nn as nn
 
-# DEFINE CNN LSTM MODEL
+# Define CNN LSTM model
 class CNNLSTMModel(nn.Module):
     def __init__(
         self,

@@ -3,7 +3,7 @@
 import torch
 import torch.nn as nn
 
-# DEFINE LSTM MODEL
+# Define LSTM Model
 class LSTMModel(nn.Module):
     def __init__(self, input_size, hidden_size, num_layers, dropout, output_size):
         super(LSTMModel, self).__init__()
