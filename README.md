@@ -25,4 +25,4 @@ In this project:
 | 5 | `VAE_Augment_LSTM.ipynb` + `LSTM.py` | Train a **VAE** to generate synthetic samples, augment training data, and retrain the best model (**LSTM**) to improve generalization. | Augmented training results + plots |
 
 ### 📄 Main Dataset
-- **`world_bank_data_clean.csv`** - cleaned World Bank panel dataset generated in **Step 1** and used throughout the project.
+- **`world_bank_data_clean.csv`**: cleaned World Bank panel dataset generated in **Step 1** and used throughout the project.
