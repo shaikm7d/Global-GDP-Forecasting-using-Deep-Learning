@@ -26,3 +26,17 @@ In this project:
 
 ### 📄 Main Dataset
 - **`world_bank_data_clean.csv`**: cleaned World Bank panel dataset generated in **Step 1** and used throughout the project.
+
+## 🧰 Tools & Technologies
+
+| Category | Libraries / Tools |
+|----------|-------------------|
+| **Language** | Python |
+| **Data Acquisition** | `wbdata` (World Bank API) |
+| **Data Handling** | pandas, numpy |
+| **Visualization** | matplotlib, seaborn |
+| **Scikit-learn** | KMeans, StandardScaler, train_test_split, TimeSeriesSplit, metrics (MSE/MAE/MAPE/R²) |
+| **Deep Learning** | PyTorch (torch, torch.nn, torch.utils.data) |
+| **Representation Learning** | Autoencoder (AE), Variational Autoencoder (VAE) |
+| **Time-Series Forecasting Models** | LSTM, CNN-LSTM, Transformer |
+| **Dimensionality Reduction** | t-SNE (3D latent visualization) |
